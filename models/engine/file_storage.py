@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""new class FileSorage"""
+
 import json
 from models.base_model import BaseModel
 
