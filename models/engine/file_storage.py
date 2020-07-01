@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""FileStorage Module"""
 import json
 from models.base_model import BaseModel
 
@@ -22,8 +23,8 @@ class FileStorage():
     def save(self):
         """serializes __objects to the JSON file (path: __file_path)"""
         se_dic = {}
-        for key in self.__object:
-            se_dic[key] = self.__object[key].to_dict()
+        for key, value in self.__object.items():
+            se_dic[key] = value.to_dict()
             with open(self.__file_path, 'w') as wri_f:
                 json.dump(se_dic, wri_f)
 
@@ -33,8 +34,8 @@ class FileStorage():
             with open(self.__file_path, 'r') as read_file:
                 all_obj = json.load(read_file)
                 for key, value in all_obj.items():
-                    name_class = value.get('__class__')
-                    obj = eval(name_class + '(**value)')
+                    # name_class = value.get('__class__')
+                    obj = eval(value['__class__'])(**value)
                     self.__object[key] = obj
 
         except FileNotFoundError:
