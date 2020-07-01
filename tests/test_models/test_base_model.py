@@ -9,7 +9,6 @@ from unittest import mock
 BaseModel = models.base_model.BaseModel
 
 
-
 class TestBaseModel(unittest.TestCase):
     """Test the BaseModel class"""
     @mock.patch('models.storage')
