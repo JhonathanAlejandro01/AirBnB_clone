@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""new class console"""
 import cmd
 
 
