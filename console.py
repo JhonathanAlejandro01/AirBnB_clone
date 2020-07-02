@@ -29,12 +29,13 @@ class HBNBCommand(cmd.Cmd):
         args = argv.split()
         if len(argv) == 0:
             print("** class name missing **")
-        try:
-            new_inst = eval(args[0] + '()')
-            models.storage.save()
-            print(new_inst.id)
-        except:
-            print("** class doesn't exist **")
+        else:
+            try:
+                new_inst = eval(args[0] + '()')
+                models.storage.save()
+                print(new_inst.id)
+            except:
+                print("** class doesn't exist **")
 
     def do_show(self, argv):
         """show intance id"""
