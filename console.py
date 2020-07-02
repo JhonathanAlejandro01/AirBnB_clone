@@ -9,6 +9,8 @@ class HBNBCommand(cmd.Cmd):
     """class interactive console"""
     prompt = '(hbnb) '
 
+    dict_class = {'BaseModel': BaseModel, 'User': User}
+
     def do_quit(self, args):
         """command to exit the program, it's same as EOF'"""
         return True
@@ -38,7 +40,7 @@ class HBNBCommand(cmd.Cmd):
         argv = argv.split()
         if len(argv) == 0:
             print("** class name missing **")
-        elif argv[0] != 'BaseModel':
+        elif argv[0] not in self.dict_class:
             print("** class doesn't exist **")
         elif len(argv) == 1:
             print("** instance id missing **")
@@ -54,7 +56,7 @@ class HBNBCommand(cmd.Cmd):
         argv = argv.split()
         if len(argv) == 0:
             print("** class name missing **")
-        elif argv[0] != 'BaseModel':
+        elif argv[0] not in self.dict_class:
             print("** class doesn't exist **")
         elif len(argv) == 1:
             print("** instance id missing **")
@@ -68,14 +70,19 @@ class HBNBCommand(cmd.Cmd):
 
     def do_all(self, argv):
         """rints all string representation of all instances based """
-        argv = argv.split()
+        argvs = argv.split()
         new_list = []
-        if len(argv) == 0 or argv[0] != "BaseModel":
+        if len(argv) == 0:
+            for value in models.storage.all().values():
+                new_list.append(value.__str__())
+            print(new_list)
+            return
+        elif argvs[0] not in self.dict_class:
             print("** class doesn't exist **")
+
         else:
-            name_intance = argv[0]
             for key, value in models.storage.all().items():
-                if argv[0] in key:
+                if argvs[0] in key:
                     new_list.append(models.storage.all()[key].__str__())
             print(new_list)
 
@@ -84,7 +91,7 @@ class HBNBCommand(cmd.Cmd):
         argv = argv.split()
         if len(argv) == 0:
             print("** class name missing **")
-        elif argv[0] != 'BaseModel':
+        elif (argv[0]) not in self.dict_class:
                 print("** class doesn't exist **")
         elif len(argv) == 1:
             print("** instance id missing **")
