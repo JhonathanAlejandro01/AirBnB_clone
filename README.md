@@ -3,7 +3,6 @@
 ## The console
 
 Description in Process.
-#
 
 ### Directory and Files
 
