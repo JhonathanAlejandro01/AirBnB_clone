@@ -3,6 +3,7 @@
 import cmd
 from models.base_model import BaseModel
 import models
+from models.user import User
 
 
 class HBNBCommand(cmd.Cmd):
@@ -37,32 +38,32 @@ class HBNBCommand(cmd.Cmd):
 
     def do_show(self, argv):
         """show intance id"""
-        argv = argv.split()
+        args = argv.split()
         if len(argv) == 0:
             print("** class name missing **")
-        elif argv[0] not in self.dict_class:
+        elif args[0] not in self.dict_class:
             print("** class doesn't exist **")
         elif len(argv) == 1:
             print("** instance id missing **")
         else:
             try:
-                name_intance = argv[0] + "." + argv[1]
+                name_intance = args[0] + "." + args[1]
                 print(models.storage.all()[name_intance])
             except:
                 print("** no instance found **")
 
     def do_destroy(self, argv):
         """delent intance select it """
-        argv = argv.split()
+        args = argv.split()
         if len(argv) == 0:
             print("** class name missing **")
-        elif argv[0] not in self.dict_class:
+        elif args[0] not in self.dict_class:
             print("** class doesn't exist **")
         elif len(argv) == 1:
             print("** instance id missing **")
         else:
             try:
-                name_intance = argv[0] + "." + argv[1]
+                name_intance = args[0] + "." + args[1]
                 del models.storage.all()[name_intance]
                 models.storage.save()
             except:
@@ -88,10 +89,10 @@ class HBNBCommand(cmd.Cmd):
 
     def do_update(self, argv):
         """add attribute within an instance"""
-        argv = argv.split()
+        args = argv.split()
         if len(argv) == 0:
             print("** class name missing **")
-        elif (argv[0]) not in self.dict_class:
+        elif (args[0]) not in self.dict_class:
                 print("** class doesn't exist **")
         elif len(argv) == 1:
             print("** instance id missing **")
@@ -101,8 +102,8 @@ class HBNBCommand(cmd.Cmd):
             print("** value missing **")
         elif len(argv) == 4:
             try:
-                name_intance = argv[0] + "." + argv[1]
-                setattr(models.storage.all()[name_intance], argv[2], argv[3])
+                name_intance = args[0] + "." + args[1]
+                setattr(models.storage.all()[name_intance], args[2], args[3])
                 models.storage.save()
             except:
                 print("** no instance found **")
