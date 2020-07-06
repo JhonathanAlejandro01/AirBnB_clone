@@ -66,7 +66,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             name_intance = args[0] + "." + args[1]
             if name_intance in objects.keys(): 
-                del objects[name_intance]
+                objects.pop(name_intance, None)
                 models.storage.save()
             else:
                 print("** no instance found **")
