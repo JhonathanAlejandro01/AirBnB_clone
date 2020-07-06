@@ -56,6 +56,7 @@ class HBNBCommand(cmd.Cmd):
     def do_destroy(self, argv):
         """delent intance select it """
         args = argv.split()
+        objects = models.storage.all()
         if len(argv) == 0:
             print("** class name missing **")
         elif args[0] not in self.dict_class:
@@ -63,11 +64,11 @@ class HBNBCommand(cmd.Cmd):
         elif len(argv) == 1:
             print("** instance id missing **")
         else:
-            try:
-                name_intance = args[0] + "." + args[1]
-                del models.storage.all()[name_intance]
+            name_intance = args[0] + "." + args[1]
+            if name_intance in objects.keys(): 
+                del objects[name_intance]
                 models.storage.save()
-            except:
+            else:
                 print("** no instance found **")
 
     def do_all(self, argv):
