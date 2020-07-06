@@ -40,6 +40,7 @@ class HBNBCommand(cmd.Cmd):
     def do_show(self, argv):
         """show intance id"""
         args = argv.split()
+        objects = models.storage.all()
         if len(argv) == 0:
             print("** class name missing **")
         elif args[0] not in self.dict_class:
@@ -47,10 +48,10 @@ class HBNBCommand(cmd.Cmd):
         elif len(argv) == 1:
             print("** instance id missing **")
         else:
-            try:
-                name_intance = args[0] + "." + args[1]
-                print(models.storage.all()[name_intance])
-            except:
+            name_intance = args[0] + "." + args[1]
+            if name_intance in objects:
+                print(objects[name_intance])
+            else:
                 print("** no instance found **")
 
     def do_destroy(self, argv):
@@ -65,7 +66,7 @@ class HBNBCommand(cmd.Cmd):
             print("** instance id missing **")
         else:
             name_intance = args[0] + "." + args[1]
-            if name_intance in objects.keys(): 
+            if name_intance in objects.keys():
                 objects.pop(name_intance, None)
                 models.storage.save()
             else:
