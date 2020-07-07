@@ -58,11 +58,11 @@ class HBNBCommand(cmd.Cmd):
         """delent intance select it """
         args = argv.split()
         objects = models.storage.all()
-        if len(argv) == 0:
+        if len(args) == 0:
             print("** class name missing **")
         elif args[0] not in self.dict_class:
             print("** class doesn't exist **")
-        elif len(argv) == 1:
+        elif len(args) == 1:
             print("** instance id missing **")
         else:
             name_intance = args[0] + "." + args[1]
