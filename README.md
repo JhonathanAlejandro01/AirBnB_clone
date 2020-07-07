@@ -46,7 +46,19 @@ EOF  help  quit
 $
 ```
 **Execution**
-
+```
+$ ./console.py
+(hbnb) all MyModel
+** class doesn't exist **
+(hbnb) show BaseModel
+** instance id missing **
+(hbnb) create BaseModel
+49faff9a-6318-451f-87b6-910505c55907
+(hbnb) all BaseModel
+["[BaseModel] (49faff9a-6318-451f-87b6-910505c55907) {'created_at': datetime.datetime(2017, 10, 2, 3, 10, 25, 903293), 'id': '49faff9a-6318-451f-87b6-910505c55907', 'updated_at': datetime.datetime(2017, 10, 2, 3, 10, 25, 903300)}"]
+(hbnb) quit 
+$
+```
 
 ## Directory and Files :file_folder:
 
@@ -74,3 +86,4 @@ $
 
 ## *Questions?*
 write to us [@Alejandro_Angar](https://twitter.com/Alejandro_Angar) or [@Diego35710808](https://twitter.com/Diego35710808)
+
