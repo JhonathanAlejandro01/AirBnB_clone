@@ -4,7 +4,7 @@
 
 The command interpreter is used to manage your AirBnB objects.
 
-**Installation**
+**Installation** :page_facing_up:
 Use the git clone command:
 `git clone https://github.com/JhonathanAlejandro01/AirBnB_clone`
 
@@ -85,5 +85,5 @@ $
 		 - `file_storage.py`
 
 ## *Questions?*
-write to us [@Alejandro_Angar](https://twitter.com/Alejandro_Angar) or [@Diego35710808](https://twitter.com/Diego35710808)
+:+1: Write to us [@Alejandro_Angar](https://twitter.com/Alejandro_Angar) or [@Diego35710808](https://twitter.com/Diego35710808)
 
