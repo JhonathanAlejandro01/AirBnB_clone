@@ -93,17 +93,17 @@ class HBNBCommand(cmd.Cmd):
     def do_update(self, argv):
         """add attribute within an instance"""
         args = argv.split()
-        if len(argv) == 0:
+        if len(args) == 0:
             print("** class name missing **")
         elif (args[0]) not in self.dict_class:
                 print("** class doesn't exist **")
-        elif len(argv) == 1:
+        elif len(args) == 1:
             print("** instance id missing **")
-        elif len(argv) == 2:
+        elif len(args) == 2:
             print("** attribute name missing **")
-        elif len(argv) == 3:
+        elif len(args) == 3:
             print("** value missing **")
-        elif len(argv) == 4:
+        elif len(args) == 4:
             try:
                 name_intance = args[0] + "." + args[1]
                 setattr(models.storage.all()[name_intance], args[2], args[3])
