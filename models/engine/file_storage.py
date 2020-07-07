@@ -20,7 +20,7 @@ class FileStorage():
         """sets in __objects the obj with key <obj class name>.id"""
         if obj:
             key = obj.__class__.__name__ + "." + obj.id
-            self.__object[key] = obj
+            FileStorage.__object[key] = obj
 
     def save(self):
         """serializes __objects to the JSON file (path: __file_path)"""
@@ -39,7 +39,7 @@ class FileStorage():
             for key, value in all_obj.items():
                 if value['__class__'] in dic_class:
                     obj = eval(value['__class__'])(**value)
-                self.__object[key] = obj
+                FileStorage.__object[key] = obj
 
         except FileNotFoundError:
             pass
