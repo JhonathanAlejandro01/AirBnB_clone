@@ -10,7 +10,7 @@ class HBNBCommand(cmd.Cmd):
     """class interactive console"""
     prompt = '(hbnb) '
 
-    dict_class = {'BaseModel': BaseModel, 'User': User}
+    dict_class = {'BaseModel', 'User'}
 
     def do_quit(self, args):
         """command to exit the program, it's same as EOF'"""
