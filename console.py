@@ -4,13 +4,19 @@ import cmd
 import models
 from models.base_model import BaseModel
 from models.user import User
+from models.place import Place
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.review import Review
 
 
 class HBNBCommand(cmd.Cmd):
     """class interactive console"""
     prompt = '(hbnb) '
 
-    dict_class = {'BaseModel', 'User'}
+    dict_class = {'BaseModel', 'User', 'Place', 'State',
+                  'City', 'Amenity', 'Review'}
 
     def do_quit(self, args):
         """command to exit the program, it's same as EOF'"""
