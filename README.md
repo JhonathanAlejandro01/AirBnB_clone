@@ -1,5 +1,5 @@
 ﻿# AirBnB clone
-![hbnb](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/logo.png))
+![hbnb](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/logo.png)
 ## The console :computer:
 
 The command interpreter is used to manage your AirBnB objects.
