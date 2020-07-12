@@ -1,5 +1,5 @@
 ﻿# AirBnB clone
-![python](https://miro.medium.com/max/2560/0*8aY8pX5CoNGImZU4.png)
+![hbnb](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/logo.png))
 ## The console :computer:
 
 The command interpreter is used to manage your AirBnB objects.
@@ -62,7 +62,7 @@ $
 
 ## Directory and Files :file_folder:
 
- - `console.py`
+  - `console.py`
  - **tests/**
 	 - `__init__.py`
 	 - **test_models/**
@@ -83,6 +83,30 @@ $
 	 - **engine/**
 		 - `__init__.py`
 		 - `file_storage.py`
+ - **web_static/**
+	 - 0-index.html
+	 - 1-index.html
+	 - 2-index.html
+	 - 3-index.html
+	 - 4-index.html
+	 - 5-index.html
+	 - 6-index.html
+	 - 7-index.html
+	 - **styles/**
+		 - 2-common.css  
+		 - 2-header.css
+		 - 2-footer.css
+		 - 3-common.css 
+		 - 3-header.css 
+		 - 3-footer.css
+		 - 4-common.css  
+		 - 4-filters.css
+		 -  5-filters.css
+		 -  6-filters.css
+		 - 7-places.css
+	 - **images/**
+		 - icon.png
+		 - logo.png
 
 ## *Questions?*
 :+1: Write to us [@Alejandro_Angar](https://twitter.com/Alejandro_Angar) or [@Diego35710808](https://twitter.com/Diego35710808)
